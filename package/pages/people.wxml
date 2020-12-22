@@ -1,0 +1,9 @@
+<view style="background: #fff;border-radius: 20rpx;">
+    <view wx:for="{{item.userInfo}}" wx:key="userId"
+            style="display: flex;padding: 10rpx 20rpx" data-user-id="{{item.userId}}" bindtap="viewReply">
+        <view style="height: 80rpx;width: 80rpx;border-radius: 50%;background: #ccc url('{{item.avatar}}') no-repeat center;background-size: cover;"></view>
+        <view style="height: 80rpx;line-height: 80rpx;margin-left: 20rpx;font-size: 30rpx;color: #333;">
+            {{item.userName || item.nickname}}
+        </view>
+    </view>
+</view>

@@ -1,0 +1,14 @@
+<view wx:if="{{ready}}">
+    <view class="header">
+        <image mode="aspectFill" src="{{avatar}}"></image>
+        <view class="name">
+            <view>{{authorName}}</view>
+            <view class="time">{{createTime}}</view>
+        </view>
+    </view>
+    <view class="content">
+        <view class="text">{{text}}</view>
+        <image lazy-load mode="widthFix" wx:for="{{images}}" wx:key="*this" src="{{item}}" data-img="{{item}}"
+                bindtap="previewImage"></image>
+    </view>
+</view>

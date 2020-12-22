@@ -1,0 +1,36 @@
+{
+  "window": {
+    "navigationBarBackgroundColor": "#00a59a",
+    "navigationBarTitleText": "老师小助理"
+  },
+  "tabBar": {
+    "color": "#888",
+    "selectedColor": "#009688",
+    "list": [
+      {
+        "iconPath": "images/tab-home.png",
+        "selectedIconPath": "images/tab-home-selected.png",
+        "text": "首页",
+        "pagePath": "pages/list"
+      },
+      {
+        "iconPath": "images/tab-my.png",
+        "selectedIconPath": "images/tab-my-selected.png",
+        "text": "我的",
+        "pagePath": "pages/my"
+      }
+    ]
+  },
+  "pages": [
+    "pages/list",
+    "pages/modify-user-info",
+    "pages/suggest",
+    "pages/wx-info",
+    "pages/my",
+    "pages/produce",
+    "pages/detail",
+    "pages/zyxq",
+    "pages/tjzy",
+    "pages/people"
+  ]
+}

@@ -1,0 +1,8 @@
+<view>
+    <view style="position: relative;height: 68rpx;line-height: 68rpx;text-align: center;">
+        <navigator open-type="navigateBack" style="position: absolute;top: 18rpx;left: 22rpx;border-top: 1rpx solid #ccc;border-left: 1rpx solid #ccc;transform: rotate(-45deg);height: 21rpx;width: 21rpx;"></navigator>
+        <view style="font-size: 32rpx;"></view>
+        <view style="position: absolute;top: 1rpx;right: 22rpx;color: #009688;font-size: 28rpx;" bindtap="ok">确定</view>
+    </view>
+    <input style="background: #fff;width: 100%;padding: 22rpx;font-size: 28rpx;" value="{{nickName}}" bindinput="inputText"/>
+</view>

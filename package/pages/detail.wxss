@@ -1,0 +1,178 @@
+page > view {
+    padding-bottom: 56rpx;
+}
+.header {
+    display: flex;
+    padding: 20rpx;
+    align-items: center;
+}
+.header image {
+    height: 80rpx;
+    width: 80rpx;
+    border-radius: 50%;
+    background: #ccc;
+}
+.name {
+    margin-left: 20rpx;
+    font-size: 30rpx;
+    color: #333;
+    flex:1;
+}
+.time {
+    color: #aaa;
+    font-size: 24rpx;
+    padding-right: 10rpx;
+}
+.share{
+    position: relative;
+    color: #009688;
+    text-align: center;
+    border-radius: 30rpx;
+    height: 60rpx;
+    padding-left: 66rpx;
+    line-height: 60rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+    background: url('data:image/svg+xml,<svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path style="fill:#009688" d="M778.602987 653.725862c-43.735084 0-82.508155 20.923542-107.114576 53.234435l-283.026028-168.531368c3.213181-12.398378 5.100158-25.314549 5.100158-38.715767 0-3.89061-0.302899-7.686053-0.573051-11.494799l283.161105-170.612773c24.713868 28.935006 61.412698 47.344285 102.452393 47.344285 74.43427 0 134.771473-60.338227 134.771473-134.76738 0-74.42506-60.338227-134.763286-134.771473-134.763286-74.424037 0-134.759193 60.334133-134.759193 134.763286 0 14.767332 2.445702 28.916587 6.837732 42.222637L369.926214 417.98579c-27.26497-43.37795-75.391061-72.290443-130.376373-72.290443-85.053118 0-154.017816 68.959581-154.017816 154.017816s68.963675 154.012699 154.017816 154.012699c45.589314 0 86.426395-19.925818 114.624621-51.3976L648.347364 754.476497c-2.829442 10.872628-4.490268 22.23235-4.490268 34.012651 0 74.43427 60.34232 134.76738 134.76738 134.76738 74.429153 0 134.763286-60.33311 134.763286-134.76738C913.388786 714.059995 853.037257 653.725862 778.602987 653.725862L778.602987 653.725862 778.602987 653.725862zM778.602987 653.725862"/></svg>') no-repeat 4rpx center;
+    background-size: auto 80%;
+}
+.share:before {
+    content: attr(data-text);
+}
+.content {
+    padding: 40rpx;
+    background: #fff;
+}
+.text {
+    font-size: 32rpx;
+    color: #333;
+    white-space: pre-wrap;
+    padding-bottom: 16rpx;
+    border-bottom: 1rpx solid #ccc;
+}
+.text:last-child {
+    border: 0;
+    padding: 0;
+}
+.content image {
+    margin: 20rpx auto 0;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+.group {
+    padding-left: 20rpx;
+    padding-right: 30rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    position: relative;
+    display: flex;
+    background: #fafafa !important;
+}
+
+open-data {
+    font-size: 32rpx;
+    display: block;
+    vertical-align: top;
+    color: #333;
+    margin-right: 10rpx;
+}
+
+text {
+    display: block;
+    color: #ccc;
+    font-size: 24rpx;
+}
+.group image {
+    position: absolute;
+    top:50%;
+    margin-top: -21rpx;
+    height: 40rpx;
+    width: 40rpx;
+    border:1rpx solid #fff;
+    border-radius: 50%;
+    background: #ccc;
+}
+.group image:nth-last-child(1) {
+    right: 40rpx;
+    z-index: 1;
+}
+.group image:nth-last-child(2) {
+    right: 50rpx;
+    z-index: 2;
+}
+.group image:nth-last-child(3) {
+    right: 60rpx;
+    z-index:3;
+}
+
+.group:not(:first-child)::after {
+    content: '';
+    position: absolute;
+    height: 21rpx;
+    width: 21rpx;
+    border-top: 1rpx solid #ccc;
+    border-right: 1rpx solid #ccc;
+    top:50%;
+    margin-top: -11rpx;
+    right:20rpx;
+    transform: rotate(45deg);
+}
+.input{
+    margin:80rpx auto 0;
+    width: 444rpx;
+    border-bottom: 1rpx solid #ccc;
+    background: url('data:image/svg+xml,<svg width="898" height="961" viewBox="63 33 898 961" version="1.1" xmlns="http://www.w3.org/2000/svg"><path style="fill:rgba(0,0,0,.3)" d="M960.341161 961.534393c0 17.874947-12.503355 32.453666-28.013328 32.453666l-840.466346 0c-15.37796 0-27.883361-14.578719-27.883361-32.453666l0 0c0-18.00389 12.505402-32.45469 27.883361-32.45469l840.466346 0C947.837806 929.079704 960.341161 943.530504 960.341161 961.534393L960.341161 961.534393zM855.486132 272.738511c-12.381576 12.615924-32.763743 12.615924-45.265051 0l-135.681561-137.620819c-12.44093-12.609784-12.44093-33.277467 0-45.890321l45.265051-45.959909c12.383622-12.615924 32.764766-12.615924 45.270168 0l135.807433 137.683244c12.378506 12.679372 12.378506 33.340915 0 45.894415L855.486132 272.738511zM357.659602 777.576047c-12.381576 12.551453-32.76579 12.551453-45.267098 0l-135.868835-137.618772c-12.441954-12.614901-12.441954-33.281561-0.062425-45.892368l407.477561-413.114202c12.439907-12.550429 32.826168-12.550429 45.266074 0l135.743985 137.68222c12.507448 12.680395 12.507448 33.345009 0 45.896461L357.659602 777.576047zM131.189031 685.849643c-12.43786-12.610807-25.444706-8.616652-28.882156 8.876584l-32.763743 165.892032c-3.44052 17.494259 7.878812 28.90467 25.135653 25.420145l163.564922-33.09224c17.25684-3.487595 21.129217-16.669434 8.753781-29.34983L131.189031 685.849643z"/></svg>') no-repeat 100% center;
+    background-size: auto 50%;
+}
+input{
+    height: 80rpx;
+    width: 100%;
+    text-align: center;
+}
+.button {
+    margin: 40rpx auto 0;
+    background: #00a59a;
+    color: #fff;
+    width: 444rpx;
+    text-align: center;
+    border-radius: 8rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+    border:1rpx solid #00a59a;
+}
+.button:before {
+    content: '同意接龙';
+}
+.tjzy:before {
+    content: '';
+}
+.button.disable {
+    background: #fff;
+    color: rgba(0,0,0,.5);
+    font-weight: normal;
+    border:1rpx solid rgba(0,150,136,.4);
+}
+.button.disable:before {
+    content: '报名成功';
+}
+.tjzy.disable:before {
+    content: '';
+}
+.mask {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 222ms;
+}
+.mask.display {
+    opacity: 1;
+    pointer-events: initial;
+}

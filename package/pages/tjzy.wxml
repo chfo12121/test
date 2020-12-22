@@ -1,0 +1,18 @@
+<view>
+    <view class="textarea">
+        <textarea cursor-spacing="20" auto-height maxlength="-1" placeholder="根据老师的要求来完成作业吧" placeholder-class="placeholder-class" bindinput="inputText" value="{{text}}"/>
+        <view class="file">
+            <view class="li" wx:for="{{images}}" wx:key="*this">
+                <image lazy-load mode="aspectFill" data-img="{{item}}" src="{{item}}" bindtap="previewImage"></image>
+                <view data-index="{{index}}" bindtap="removeImage"></view>
+            </view>
+            <view hidden="{{images.length>3}}" class="add" bindtap="chooseImage"></view>
+        </view>
+    </view>
+    <view class="input">
+        <input placeholder="嗨，签个名呗～" bindinput="bindinput" value="{{myName}}"/>
+    </view>
+    <view class="button {{hasText?'':'disable'}}" data-text="确认提交">
+        <button open-type="getUserInfo" bindgetuserinfo="ok"></button>
+    </view>
+</view>

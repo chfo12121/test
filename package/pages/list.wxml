@@ -1,0 +1,34 @@
+<view wx:if="{{ready}}">
+    <view class="message type-{{item.type}}" wx:for="{{messages}}" wx:key="answer">
+        <view data-msg-id="{{item.msgHomId}}" bindtap="viewDetail">
+            <view class="header" style="position: relative;color: rgba(0,0,0,.44);font-size: 20rpx;" data-course="{{item.courseName}}"><text style="margin-left: 44rpx;">{{item.createTime}}</text></view>
+            <view class="content">{{item.content}}</view>
+            <view class="footer">{{item.type==1?'已阅':item.type==2?'已提交':'已接龙'}} {{item.userVoList.length}}</view>
+            <image mode="aspectFill" wx:for="{{[0,1,2]}}" wx:key="*this" wx:for-item="i" src="{{item.userVoList[i].avatar}}"></image>
+        </view>
+    </view>
+    <view class="empty">
+        <view style="margin-left: 40rpx;margin-top: 80rpx;font-size: 30rpx;">
+            <image src="http://xiaoboshi.xyuzhou.cn/FsYVMBFxwAQceDKVOOdV7W6TDcTb?imageView2/1/w/100/h/100" style="width: 60rpx;height: 60rpx;vertical-align: middle;"></image>
+            嗨，{{nickName}}，以后由我来做您的小助手!
+        </view>
+        <view style="color: #8A8484;margin-top: 120rpx;font-size: 32rpx;margin-left: 40rpx;">
+            <view style="margin-top: 16rpx;">数万老师都在用的神器~</view>
+            <view style="margin-top: 16rpx;">您使用我可以：</view>
+            <view style="margin-top: 16rpx;">发通知、作业、接龙、动态等</view>
+            <view style="margin-top: 16rpx;">可让学员提交作业（支持图文、语音跟新中）</view>
+            <view style="margin-top: 16rpx;">并统计查阅及接龙名单</view>
+            <view style="margin-top: 16rpx;">避免刷屏打扰、辛苦爬楼哦！</view>
+            <view style="margin-top: 30rpx;color: #009688;font-size: 24rpx;">为了显示您的真实身份，请到【我的】设置下您的真实称呼吧！</view>
+        </view>
+    </view>
+    <view class="mask {{open?'display':''}}" bindtap="toggle"></view>
+    <view class="aside {{open?'open':''}}">
+        <view class="select">
+            <view class="li" data-type="1" bindtap="create">发通知</view>
+            <view class="li" data-type="2" bindtap="create">发作业</view>
+            <view class="li" data-type="3" bindtap="create">发接龙</view>
+        </view>
+        <view class="switch" bindtap="toggle"></view>
+    </view>
+</view>

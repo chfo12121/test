@@ -1,0 +1,6 @@
+page {
+    background: #fafafa;
+}
+page > view {
+    margin: 30rpx;
+}

@@ -1,0 +1,27 @@
+<view>
+    <view class="textarea">
+        <textarea cursor-spacing="20" auto-height maxlength="-1" placeholder="{{placeholder}}" placeholder-class="placeholder-class" bindinput="inputText" value="{{text}}"/>
+        <view class="file">
+            <view class="li" wx:for="{{images}}" wx:key="*this">
+                <image lazy-load mode="aspectFill" data-img="{{item}}" src="{{item}}" bindtap="previewImage"></image>
+                <view data-index="{{index}}" bindtap="removeImage"></view>
+            </view>
+            <view hidden="{{images.length>3}}" class="add" bindtap="chooseImage"></view>
+        </view>
+    </view>
+    <view class="input" wx:if="{{iszuoye}}">
+        <input placeholder="请输入科目：如语文！" value="{{kemu}}" bindinput="bindinput" style="font-size: 32rpx;"/>
+    </view>
+    <view style="width: 650rpx;margin: 0 auto;margin-top: 22rpx;font-size: 32rpx;color: #797171;height: 44rpx;line-height: 44rpx;">
+        <checkbox-group bindchange="checkbox" wx:if="{{iszuoye}}" style="display: inline-block;height: 44rpx;width: 44rpx;border-radius: 50%;background: #00a59a;position: relative;vertical-align: top;{{isSubmit?'':'background:#ccc;'}}">
+            <view style="position: absolute;height: 11rpx;width: 21rpx;border-left: 4rpx solid #fff;border-bottom: 4rpx solid #fff;top: 12rpx;left: 11rpx;transform: rotate(-45deg);"></view>
+            <label style="position: absolute;top: 0;bottom: 0;right: 0;left: 0;white-space: nowrap;">
+                <checkbox style="opacity: 0;"/>
+                要求提交作业
+            </label>
+        </checkbox-group>
+    </view>
+    <view class="button {{hasText?'':'disable'}}" data-text="{{buttonText}}">
+        <button open-type="getUserInfo" bindgetuserinfo="ok"></button>
+    </view>
+</view>

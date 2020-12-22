@@ -1,0 +1,3 @@
+<view wx:if="{{new}}" data-text="同意小程序使用微信头像">
+    <button open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo"></button>
+</view>

@@ -1,0 +1,62 @@
+<view wx:if="{{ready}}" style="padding-bottom: 111rpx;">
+    <view class="header">
+        <image mode="aspectFill" src="{{avatar}}"></image>
+        <view class="name">
+            <view>{{authorName}}</view>
+            <view class="time">{{createTime}}
+                <text style="margin-left: 33rpx;display: inline;" bindtap="delete" wx:if="{{isAuthor}}">删除</text>
+            </view>
+        </view>
+        <view class="share" data-text="{{shareText}}" wx:if="{{isAuthor||type!=2}}">
+            <button open-type="share"></button>
+        </view>
+    </view>
+    <view class="content">
+        <view class="text">{{text}}</view>
+        <image lazy-load mode="widthFix" wx:for="{{images}}" wx:key="*this" src="{{item}}" data-img="{{item}}"
+                bindtap="previewImage"></image>
+    </view>
+    <view class="input" wx:if="{{status!==1&&type==3&&!isAuthor}}">
+        <input placeholder="嗨，别忘记留名或电话喽！" bindinput="bindinput" value="{{userName}}"/>
+    </view>
+    <view wx:if="{{type==3&&!isAuthor}}" class="button {{status===1?'disable':''}}">
+        <button open-type="getUserInfo" bindgetuserinfo="commit"></button>
+    </view>
+    <view class="tjzy button {{status===1?'disable':''}}" wx:if="{{type==2&&!isAuthor&&fromGroup&&isSubmit}}" bindtap="tjzy">
+        {{status === 1 ? '已提交' : '提交作业'}}
+    </view>
+    <navigator open-type="switchTab" url="list"
+            style="position: fixed;bottom: 99rpx;right: 33rpx;color: #fff;width: 111rpx;height: 111rpx;line-height: 111rpx;text-align: center;background: #009688;border-radius: 50%;">
+        首页
+    </navigator>
+    <view class="mask {{open?'display':''}}" bindtap="toggle"></view>
+    <view style="position: fixed;left: 0;right: 0;top: 100%;{{open?'transform:translateY(-100%);':'transform:translateY(-80rpx);'}};padding-top: 0;margin-top: 0;transition: all 222ms;">
+        <view class="group" bindtap="toggle">
+            <view style="font-size: 32rpx; vertical-align: top; color: #333;  margin-right: 10rpx;">
+                {{type == 1 ? '已阅' : type == 2 ? '已提交' : '已接龙'}}
+            </view>
+            <text>{{total}}</text>
+            <image
+                    mode="aspectFill"
+                    wx:for="{{[groupList[0].userInfo.length-1,groupList[0].userInfo.length-2,groupList[0].userInfo.length-3]}}"
+                    wx:key="*this"
+                    wx:for-item="i"
+                    wx:if="{{groupList[0].userInfo[i]}}"
+                    src="{{groupList[0].userInfo[i].avatar}}"
+            ></image>
+        </view>
+        <view class="group" wx:for="{{groupList}}" wx:key="groupId" data-index="{{index}}" bindtap="group">
+            <open-data type="groupName" open-gid="{{item.groupId}}" wx:if="{{item.groupId}}"></open-data>
+            <view wx:else style="font-size: 32rpx; vertical-align: top; color: #333;  margin-right: 10rpx;">来自个人</view>
+            <text>{{item.userInfo.length}}</text>
+            <image
+                    mode="aspectFill"
+                    wx:for="{{[item.userInfo.length-1,item.userInfo.length-2,item.userInfo.length-3]}}"
+                    wx:key="*this"
+                    wx:for-item="i"
+                    wx:if="{{item.userInfo[i]}}"
+                    src="{{item.userInfo[i].avatar}}"
+            ></image>
+        </view>
+    </view>
+</view>

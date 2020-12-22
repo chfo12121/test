@@ -1,0 +1,15 @@
+<view>
+    <view style="background: #00a59a;padding-top: 176rpx;padding-bottom: 46rpx;padding-left: 44rpx;margin-bottom: 22rpx;display: flex;">
+        <image src="{{avatar}}" style="height: 98rpx;width: 98rpx;border-radius: 50%;" mode="aspectFill"></image>
+        <view style="color:#fff;font-size: 30rpx;padding-top: 44rpx;padding-left: 22rpx;" bindtap="modify">{{nickName}}</view>
+        <view class="pen" style="margin-top: 55rpx;margin-left: 22rpx;" bindtap="modify"></view>
+    </view>
+    <view wx:if="{{see}}" style="position: relative;">
+        <input placeholder="输入新名字" bindinput="bindinput" style="border: 1rpx solid #999;margin-left: 33rpx;height: 66rpx;width: 555rpx;"/>
+        <view bindtap="modify" style="position: absolute;top: 0;right: 22rpx;background: #fff;border: 1rpx solid #999;padding: 11rpx;">确定</view>
+    </view>
+    <navigator url="suggest" style="font-size: 32rpx;color: rgba(0,0,0,.4);margin: 0 30rpx;border-bottom: 1rpx solid #ccc;position: relative;height: 66rpx;line-height: 66rpx;">
+        我要吐槽
+        <view style="position: absolute;top: 50%;height: 11rpx;width: 11rpx;border-top: 1rpx solid #ccc;border-right: 1rpx solid #ccc;margin-top: -6rpx;right: 1rpx;transform: rotate(45deg);"></view>
+    </navigator>
+</view>
